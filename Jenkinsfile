@@ -13,5 +13,11 @@ pipeline {
                 echo "build successful"
             }
         }
+
+        stage("S3 Sync") {
+            steps{
+                sh "aws s3 sync build/ s3://batch4frontend"
+            }
+        }
     }
 }
