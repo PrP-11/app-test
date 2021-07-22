@@ -16,9 +16,7 @@ pipeline {
 
         stage("S3 Sync") {
             steps{
-                withAWS(credentials: 'Praduman_Pannu', region: 'us-east-1'){
-                    sh "aws s3 sync build/ s3://batch4frontend"
-                }
+                  sh "aws s3 sync build/ s3://batch4frontend"
             }
         }
     }
